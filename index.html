@@ -4,9 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zhanyang Liu</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, nav, main, footer { max-width: 900px; margin: auto; padding: 1rem; }
+    nav a { margin: 0 10px; text-decoration: none; color: #333; }
+    nav { border-bottom: 1px solid #ccc; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+    h1 { margin-bottom: 0; }
+    .section { margin-bottom: 2rem; }
+    footer { text-align: center; font-size: 0.9rem; color: #666; }
+  </style>
 </head>
 <body>
-  <h1>Hello, I'm Zhanyang Liu!</h1>
-  <p>Welcome to my personal website(still under constructions...).</p>
+
+<header>
+  <h1>Zhanyang Liu</h1>
+  <p>PhD Student in Political Science, University of Wisconsin–Madison</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="cv.pdf" target="_blank">CV</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p>I am a forthcoming PhD student in Political Science at the University of Wisconsin–Madison. I hold dual Master’s degrees from the University of Michigan–Ann Arbor: a Master of International and Regional Studies and a Master of Science in Information (Big Data Analytics track).</p>
+    <p>My work bridges political science and computational methods — particularly data mining, natural language processing, and data visualization — with applications in comparative politics and Middle East studies.</p>
+  </section>
+
+  <section class="section" id="research">
+    <h2>Research</h2>
+    <ul>
+      <li><strong>Arab Protest Behavior in Israel’s 2023 Judicial Crisis</strong> — Master’s thesis combining survey data, fieldwork, and interrupted time series analysis.</li>
+      <li><strong>Religious Doctrine vs. Institutions in Political Speeches</strong> — NLP-based classification using BERT and SHAP explanations on Trump’s speeches.</li>
+      <li><strong>State Reactions to Protest Movements</strong> — A developing cross-national event-level dataset with regime-type coding and enforcement tactics.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>MSI Capstone Project: Tornado Visualization Dashboard</strong> — Built an interactive web app using Streamlit and Altair to visualize U.S. tornado trends.</li>
+      <li><strong>Religious Speech NLP Pipeline</strong> — Annotated corpus of doctrine/institution references in political speeches, fine-tuned MiniLM model, and interpretability with SHAP.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:janezhanyang2024@outlook.com">janezhanyang2024@outlook.com</a></p>
+    <p>GitHub: <a href="https://github.com/zhanyang-727" target="_blank">zhanyang-727</a></p>
+    <p>LinkedIn: (Add if you have one)</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Zhanyang Liu</p>
+</footer>
+
 </body>
 </html>
