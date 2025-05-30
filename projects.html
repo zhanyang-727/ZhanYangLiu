@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Zhanyang Liu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .nav-link.active {
+      font-weight: bold;
+      color: #0d6efd;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Zhanyang Liu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="mb-4">Projects</h1>
+
+    <h3>Data Visualization Project: U.S. Tornado Visualization Dashboard</h3>
+    <p>Developed an interactive data visualization tool using Streamlit and Altair to analyze tornado trends across U.S. states over time. Integrated NOAA data and geospatial filtering capabilities.</p>
+
+    <h3>President Speech Religious Reference Analyzer</h3>
+    <p>Built a sentence-level BERT classification pipeline to distinguish references to religious doctrine vs. institutions in presidential speeches. Incorporated SHAP-based interpretability and temporal trend visualizations.</p>
+
+    <h3>Custom NLP Pipeline for Religious Content Classification</h3>
+    <p>Created a hybrid keyword + transformer-based model to classify speech content into doctrine, institution, or neutral, with manual annotations and rule-based preprocessing for initial training.</p>
+  </div>
+
+  <footer class="bg-light text-center py-3 mt-5">
+    <small>&copy; 2025 Zhanyang Liu</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
