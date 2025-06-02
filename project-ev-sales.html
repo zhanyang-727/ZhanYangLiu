@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EV Sales Visualization | Zhanyang Liu</title>
+  <link rel="preload" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/redhat-display-latin.v14.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/redhat-text-latin.v13.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" crossorigin type="text/css" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/fonts.css" />
+  <style>
+    :root {
+      --uwSiteTitleFont: Red Hat Display, sans-serif;
+      --uwSiteTaglineFont: Red Hat Display, sans-serif;
+      --uwTextFont: Red Hat Text, sans-serif;
+      --uwCopyFont: Red Hat Text, sans-serif;
+      --uwDisplayFont: Red Hat Display, sans-serif;
+      --uwButtonFont: Red Hat Text, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #333333;
+      font-family: var(--uwTextFont);
+      font-weight: 400;
+      line-height: 1.625;
+      background-color: #fff;
+    }
+
+    /* UW Global Bar */
+    .uw-global-bar {
+      background-color: #c5050c;
+      color: white;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+      font-size: 0.825rem;
+      font-weight: 620;
+      font-family: var(--uwDisplayFont);
+    }
+
+    .uw-global-name-link {
+      color: white;
+      line-height: 2.2rem;
+      text-decoration: none;
+    }
+
+    .uw-global-name-link:hover {
+      text-decoration: none;
+    }
+
+    /* Header */
+    .uw-header {
+      background-color: white;
+      border-bottom: 1px solid #cfcfcf;
+      padding: 1rem 0;
+    }
+
+    .uw-header-container {
+      max-width: 62.5em;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .uw-site-title {
+      font-weight: 800;
+      font-family: var(--uwSiteTitleFont);
+      font-size: 1.5rem;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .uw-site-title a {
+      color: #c5050c;
+      text-decoration: none;
+    }
+
+    /* Navigation */
+    .uw-nav-menu {
+      background-color: #c5050c;
+      margin: 0;
+      padding: 0;
+    }
+
+    .uw-nav-container {
+      max-width: 62.5em;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .uw-nav-menu ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    .uw-nav-menu li {
+      margin: 0;
+    }
+
+    .uw-nav-menu a {
+      display: inline-block;
+      font-family: var(--uwDisplayFont);
+      font-size: 1rem;
+      font-weight: 650;
+      line-height: 1.25;
+      color: white;
+      padding: 1.05rem 0.95rem;
+      text-decoration: none;
+      border-bottom: 0.2rem solid transparent;
+      transition: border-bottom-color 0.2s ease;
+    }
+
+    .uw-nav-menu a:hover,
+    .uw-nav-menu a.active {
+      border-bottom-color: white;
+    }
+
+    /* Breadcrumbs */
+    .uw-breadcrumbs {
+      max-width: 62.5em;
+      margin: 1rem auto 0;
+      padding: 0 1rem;
+    }
+
+    .uw-breadcrumbs ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+      font-size: 0.875rem;
+      color: #6c757d;
+    }
+
+    .uw-breadcrumbs li {
+      margin: 0;
+    }
+
+    .uw-breadcrumbs a {
+      color: #0479a8;
+      text-decoration: none;
+    }
+
+    .uw-breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .uw-breadcrumbs li:not(:last-child)::after {
+      content: "/";
+      margin: 0 0.5rem;
+      color: #6c757d;
+    }
+
+    /* Main Content */
+    .uw-row {
+      max-width: 62.5em;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-weight: 630;
+      font-size: 2.25rem;
+      font-family: var(--uwDisplayFont);
+      line-height: 1.3;
+      color: #333333;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.375rem;
+      font-weight: 650;
+      font-family: var(--uwDisplayFont);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      color: #333333;
+      position: relative;
+    }
+
+    h2:before {
+      position: absolute;
+      left: 0;
+      height: 4px;
+      content: "";
+      width: 3rem;
+      top: -12px;
+      background-color: #c5050c;
+    }
+
+    /* Content Sections */
+    .uw-content-box {
+      background-color: #f7f7f7;
+      border-bottom: 4px solid #c5050c;
+      padding: 1.75rem 2rem;
+      margin-bottom: 2rem;
+      border-radius: 4px;
+    }
+
+    .project-overview {
+      color: #6c757d;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .project-details {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      font-size: 1.125rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 620;
+      font-size: 1rem;
+      font-family: var(--uwButtonFont);
+      transition: all 0.25s ease-out;
+      box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    .live-link {
+      background-color: #0479a8;
+      color: white;
+      border: 2px solid #0479a8;
+    }
+
+    .live-link:hover {
+      background-color: white;
+      color: #0479a8;
+      text-decoration: none;
+    }
+
+    .github-link {
+      background-color: white;
+      color: #6c757d;
+      border: 2px solid #cfcfcf;
+    }
+
+    .github-link:hover {
+      background-color: #f7f7f7;
+      color: #333333;
+      border-color: #adb5bd;
+      text-decoration: none;
+    }
+
+    .back-link {
+      background-color: #c5050c;
+      color: white;
+      border: 2px solid #c5050c;
+      margin-bottom: 2rem;
+    }
+
+    .back-link:hover {
+      background-color: white;
+      color: #c5050c;
+      text-decoration: none;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 0.5rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .project-tag {
+      background-color: #e7f3ff;
+      color: #0479a8;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    .uw-footer {
+      background-color: #282728;
+      border-top: 5px solid #c5050c;
+      color: #adadad;
+      text-align: center;
+      padding: 2rem 0 1rem;
+      margin-top: 3rem;
+    }
+
+    .uw-footer small {
+      font-size: 0.925rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .uw-nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .uw-nav-menu a {
+        padding: 0.75rem 1rem;
+        width: 100%;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      .uw-content-box {
+        padding: 1.25rem 1.5rem;
+      }
+
+      .project-links {
+        flex-direction: column;
+      }
+
+      .project-link {
+        justify-content: center;
+      }
+    }
+
+    @media (min-width: 40em) {
+      .uw-site-title {
+        font-size: 1.7rem;
+      }
+    }
+
+    @media (min-width: 64em) {
+      .uw-site-title {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (min-width: 75em) {
+      .uw-site-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- UW Global Bar -->
+  <div class="uw-global-bar">
+    <a class="uw-global-name-link" href="https://www.wisc.edu">
+      University of Wisconsin–Madison
+    </a>
+  </div>
+
+  <!-- Header -->
+  <header class="uw-header">
+    <div class="uw-header-container">
+      <h1 class="uw-site-title">
+        <a href="index.html">Zhanyang Liu</a>
+      </h1>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="uw-nav-menu">
+    <div class="uw-nav-container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <nav class="uw-breadcrumbs">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li>EV Sales Visualization</li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="uw-row">
+    <a href="projects.html" class="project-link back-link">← Back to Projects</a>
+    
+    <h1>MSI Capstone Project: Electric Vehicle Sales Visualization</h1>
+    
+    <div class="project-tags">
+      <span class="project-tag">Streamlit</span>
+      <span class="project-tag">Data Visualization</span>
+      <span class="project-tag">Geographic Analysis</span>
+      <span class="project-tag">Python</span>
+      <span class="project-tag">Pandas</span>
+    </div>
+
+    <p class="project-overview">
+      This capstone project for the Master of Science in Information program at the University of Michigan creates an interactive dashboard to visualize electric vehicle (EV) sales trends across the United States using Streamlit.
+    </p>
+
+    <div class="uw-content-box">
+      <h2>Project Overview</h2>
+      <p class="project-details">
+        The dashboard provides a comprehensive view of EV adoption patterns by combining geographic and temporal analysis. Users can explore how EV sales have evolved across different states and time periods, with interactive visualizations that make complex data accessible to both technical and non-technical audiences.
+      </p>
+      <p class="project-details">
+        This project was developed as part of Team Sour Patch for the SI 699 capstone course, demonstrating skills in data processing, interactive visualization, and web application development.
+      </p>
+    </div>
+
+    <div class="uw-content-box">
+      <h2>Key Features</h2>
+      <p class="project-details">
+        <strong>Geographic Visualization:</strong> Interactive maps showing EV sales distribution across US states with color-coded intensity levels.
+      </p>
+      <p class="project-details">
+        <strong>Temporal Analysis:</strong> Time series charts displaying sales trends over multiple years, allowing users to identify growth patterns and seasonal variations.
+      </p>
+      <p class="project-details">
+        <strong>Comparative Analysis:</strong> State-by-state comparisons with filtering and sorting capabilities to identify top-performing regions.
+      </p>
+      <p class="project-details">
+        <strong>Interactive Interface:</strong> User-friendly Streamlit interface with responsive design and intuitive navigation.
+      </p>
+    </div>
+
+    <div class="uw-content-box">
+      <h2>Technical Implementation</h2>
+      <p class="project-details">
+        The project leverages Python's data science ecosystem, including Pandas for data manipulation, Plotly for interactive visualizations, and Streamlit for the web interface. The dashboard processes large datasets efficiently while maintaining responsive performance.
+      </p>
+      <p class="project-details">
+        Data sources include state-level EV registration data, which is cleaned, processed, and transformed into meaningful visualizations that reveal insights about EV adoption trends across different geographic regions and time periods.
+      </p>
+    </div>
+
+    <div class="project-links">
+      <a href="https://si699ev-sales-visualization-teamsourpatch.streamlit.app/" target="_blank" class="project-link live-link">
+        View Live Dashboard
+      </a>
+      <a href="https://github.com/zhanyang-727/SI699_ev-sales-visualization" target="_blank" class="project-link github-link">
+        View Source Code
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="uw-footer">
+    <small>&copy; 2025 Zhanyang Liu</small>
+  </footer>
+</body>
+</html>
