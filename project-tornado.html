@@ -1,235 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" class="no-js">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tornado Event Visualization | Zhanyang Liu</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
   <link rel="preload" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/redhat-display-latin.v14.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/redhat-text-latin.v13.woff2" as="font" type="font/woff2" crossorigin>
+  <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'')})(document.documentElement)</script>
+  <title>Tornado Event Visualization | Zhanyang Liu</title>
   <link rel="stylesheet" crossorigin type="text/css" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/fonts.css" />
+  <link rel="stylesheet" href="css/uw-style.css?version=3.2.6">
   <style>
-    :root {
-      --uwSiteTitleFont: Red Hat Display, sans-serif;
-      --uwSiteTaglineFont: Red Hat Display, sans-serif;
-      --uwTextFont: Red Hat Text, sans-serif;
-      --uwCopyFont: Red Hat Text, sans-serif;
-      --uwDisplayFont: Red Hat Display, sans-serif;
-      --uwButtonFont: Red Hat Text, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      color: #333333;
-      font-family: var(--uwTextFont);
-      font-weight: 400;
-      line-height: 1.625;
-      background-color: #fff;
-    }
-
-    /* UW Global Bar */
-    .uw-global-bar {
-      background-color: #c5050c;
-      color: white;
-      padding: 0 1rem;
-      display: flex;
-      justify-content: space-between;
-      text-transform: uppercase;
-      font-size: 0.825rem;
-      font-weight: 620;
-      font-family: var(--uwDisplayFont);
-    }
-
-    .uw-global-name-link {
-      color: white;
-      line-height: 2.2rem;
-      text-decoration: none;
-    }
-
-    .uw-global-name-link:hover {
-      text-decoration: none;
-    }
-
-    /* Header */
-    .uw-header {
+    /* Custom styles for personal branding */
+    .personal-header {
       background-color: white;
-      border-bottom: 1px solid #cfcfcf;
-      padding: 1rem 0;
+      border-bottom: 2px solid #c5050c;
+      padding: 1.5rem 0;
     }
-
-    .uw-header-container {
+    
+    .personal-header-container {
       max-width: 62.5em;
       margin: 0 auto;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
       padding: 0 1rem;
     }
-
-    .uw-site-title {
-      font-weight: 800;
+    
+    .personal-branding {
+      display: flex;
+      align-items: center;
+    }
+    
+    .personal-name {
       font-family: var(--uwSiteTitleFont);
-      font-size: 1.5rem;
-      line-height: 1.1;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #333;
       margin: 0;
     }
-
-    .uw-site-title a {
+    
+    .personal-affiliation {
+      font-family: var(--uwTextFont);
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0;
+      font-weight: 400;
+    }
+    
+    .personal-nav {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .personal-nav .uw-nav-menu {
+      background-color: transparent;
+    }
+    
+    .personal-nav .uw-nav-menu a {
+      color: #495057;
+      font-weight: 500;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+    
+    .personal-nav .uw-nav-menu a:hover {
       color: #c5050c;
-      text-decoration: none;
+      border-bottom-color: #c5050c;
+      background-color: transparent;
     }
-
-    /* Navigation */
-    .uw-nav-menu {
-      background-color: #c5050c;
-      margin: 0;
-      padding: 0;
+    
+    .personal-nav .uw-nav-menu a.current-page {
+      color: #c5050c;
+      font-weight: 600;
+      border-bottom-color: #c5050c;
     }
-
-    .uw-nav-container {
-      max-width: 62.5em;
+    
+    .project-container {
+      max-width: 50rem;
       margin: 0 auto;
-      display: flex;
-      align-items: center;
       padding: 0 1rem;
     }
-
-    .uw-nav-menu ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      align-items: center;
-    }
-
-    .uw-nav-menu li {
-      margin: 0;
-    }
-
-    .uw-nav-menu a {
-      display: inline-block;
-      font-family: var(--uwDisplayFont);
-      font-size: 1rem;
-      font-weight: 650;
-      line-height: 1.25;
-      color: white;
-      padding: 1.05rem 0.95rem;
-      text-decoration: none;
-      border-bottom: 0.2rem solid transparent;
-      transition: border-bottom-color 0.2s ease;
-    }
-
-    .uw-nav-menu a:hover,
-    .uw-nav-menu a.active {
-      border-bottom-color: white;
-    }
-
-    /* Breadcrumbs */
-    .uw-breadcrumbs {
-      max-width: 62.5em;
-      margin: 1rem auto 0;
-      padding: 0 1rem;
-    }
-
-    .uw-breadcrumbs ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      align-items: center;
+    
+    .breadcrumbs {
+      margin: 1.5rem 0;
       font-size: 0.875rem;
       color: #6c757d;
+      font-family: var(--uwTextFont);
     }
-
-    .uw-breadcrumbs li {
-      margin: 0;
-    }
-
-    .uw-breadcrumbs a {
+    
+    .breadcrumbs a {
       color: #0479a8;
       text-decoration: none;
     }
-
-    .uw-breadcrumbs a:hover {
+    
+    .breadcrumbs a:hover {
       text-decoration: underline;
     }
-
-    .uw-breadcrumbs li:not(:last-child)::after {
-      content: "/";
+    
+    .breadcrumbs span {
       margin: 0 0.5rem;
-      color: #6c757d;
+      color: #adb5bd;
     }
-
-    /* Main Content */
-    .uw-row {
-      max-width: 62.5em;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    h1 {
-      font-weight: 630;
-      font-size: 2.25rem;
-      font-family: var(--uwDisplayFont);
-      line-height: 1.3;
-      color: #333333;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 1.375rem;
-      font-weight: 650;
-      font-family: var(--uwDisplayFont);
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      line-height: 1.4;
-      color: #333333;
-      position: relative;
-    }
-
-    h2:before {
-      position: absolute;
-      left: 0;
-      height: 4px;
-      content: "";
-      width: 3rem;
-      top: -12px;
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       background-color: #c5050c;
-    }
-
-    /* Content Sections */
-    .uw-content-box {
-      background-color: #f7f7f7;
-      border-bottom: 4px solid #c5050c;
-      padding: 1.75rem 2rem;
-      margin-bottom: 2rem;
+      color: white;
+      border: 2px solid #c5050c;
+      padding: 0.75rem 1.25rem;
       border-radius: 4px;
+      text-decoration: none;
+      font-weight: 620;
+      font-size: 1rem;
+      font-family: var(--uwButtonFont);
+      transition: all 0.25s ease-out;
+      box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+      margin-bottom: 2rem;
     }
-
+    
+    .back-link:hover {
+      background-color: white;
+      color: #c5050c;
+      text-decoration: none;
+    }
+    
+    .project-title {
+      font-family: var(--uwDisplayFont);
+      font-weight: 650;
+      font-size: 2.25rem;
+      color: #333;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    
+    .project-tags {
+      display: flex;
+      gap: 0.5rem;
+      margin: 1rem 0 2rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .project-tag {
+      background-color: #e7f3ff;
+      color: #0479a8;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      font-family: var(--uwTextFont);
+    }
+    
     .project-overview {
-      color: #6c757d;
+      color: #555;
       font-size: 1.25rem;
       line-height: 1.6;
       margin-bottom: 2rem;
+      font-family: var(--uwTextFont);
+      font-style: italic;
     }
-
-    .project-details {
-      color: #6c757d;
+    
+    .content-section {
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #c5050c;
+    }
+    
+    .section-title {
+      font-family: var(--uwDisplayFont);
+      font-weight: 650;
+      font-size: 1.375rem;
+      color: #333;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    
+    .section-title:before {
+      position: absolute;
+      left: 0;
+      height: 3px;
+      content: "";
+      width: 2rem;
+      top: -8px;
+      background-color: #c5050c;
+    }
+    
+    .section-content {
+      color: #555;
       line-height: 1.6;
       margin-bottom: 1rem;
       font-size: 1.125rem;
+      font-family: var(--uwTextFont);
     }
-
+    
+    .contribution-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .contribution-title {
+      font-weight: 625;
+      color: #333;
+      font-family: var(--uwDisplayFont);
+      margin-bottom: 0.5rem;
+    }
+    
     .project-links {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
+      justify-content: center;
     }
-
+    
     .project-link {
       display: inline-flex;
       align-items: center;
@@ -243,240 +231,209 @@
       transition: all 0.25s ease-out;
       box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
     }
-
+    
     .live-link {
       background-color: #0479a8;
       color: white;
       border: 2px solid #0479a8;
     }
-
+    
     .live-link:hover {
       background-color: white;
       color: #0479a8;
       text-decoration: none;
     }
-
+    
     .github-link {
       background-color: white;
       color: #6c757d;
       border: 2px solid #cfcfcf;
     }
-
+    
     .github-link:hover {
       background-color: #f7f7f7;
       color: #333333;
       border-color: #adb5bd;
       text-decoration: none;
     }
-
-    .back-link {
-      background-color: #c5050c;
-      color: white;
-      border: 2px solid #c5050c;
-      margin-bottom: 2rem;
-    }
-
-    .back-link:hover {
-      background-color: white;
-      color: #c5050c;
-      text-decoration: none;
-    }
-
-    .project-tags {
-      display: flex;
-      gap: 0.5rem;
-      margin: 1rem 0;
-      flex-wrap: wrap;
-    }
-
-    .project-tag {
-      background-color: #e7f3ff;
-      color: #0479a8;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.875rem;
-      font-weight: 500;
-    }
-
-    /* Footer */
-    .uw-footer {
-      background-color: #282728;
-      border-top: 5px solid #c5050c;
-      color: #adadad;
+    
+    .personal-footer {
+      background-color: #f8f9fa;
+      border-top: 1px solid #e9ecef;
+      padding: 2rem 0;
+      margin-top: 4rem;
       text-align: center;
-      padding: 2rem 0 1rem;
-      margin-top: 3rem;
     }
-
-    .uw-footer small {
-      font-size: 0.925rem;
+    
+    .personal-footer p {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0;
     }
-
-    /* Responsive Design */
+    
+    /* Mobile responsiveness */
     @media (max-width: 768px) {
-      .uw-nav-menu ul {
+      .personal-header-container {
         flex-direction: column;
-        width: 100%;
-      }
-
-      .uw-nav-menu a {
-        padding: 0.75rem 1rem;
-        width: 100%;
+        gap: 1rem;
         text-align: center;
       }
-
-      h1 {
+      
+      .personal-branding {
+        text-align: center;
+      }
+      
+      .personal-name {
+        font-size: 1.5rem;
+      }
+      
+      .project-title {
         font-size: 1.75rem;
       }
-
-      .uw-content-box {
-        padding: 1.25rem 1.5rem;
+      
+      .content-section {
+        padding: 1.5rem;
       }
-
+      
+      .project-container {
+        padding: 0 0.5rem;
+      }
+      
       .project-links {
         flex-direction: column;
       }
-
+      
       .project-link {
         justify-content: center;
-      }
-    }
-
-    @media (min-width: 40em) {
-      .uw-site-title {
-        font-size: 1.7rem;
-      }
-    }
-
-    @media (min-width: 64em) {
-      .uw-site-title {
-        font-size: 1.8rem;
-      }
-    }
-
-    @media (min-width: 75em) {
-      .uw-site-title {
-        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- UW Global Bar -->
-  <div class="uw-global-bar">
-    <a class="uw-global-name-link" href="https://www.wisc.edu">
-      University of Wisconsin–Madison
-    </a>
-  </div>
-
-  <!-- Header -->
-  <header class="uw-header">
-    <div class="uw-header-container">
-      <h1 class="uw-site-title">
-        <a href="index.html">Zhanyang Liu</a>
-      </h1>
+  <a class="uw-show-on-focus" href="#main" id="uw-skip-link">Skip to main content</a>
+  
+  <!-- Personal Header -->
+  <header class="personal-header">
+    <div class="personal-header-container">
+      <div class="personal-branding">
+        <div>
+          <h1 class="personal-name">Zhanyang Liu</h1>
+          <p class="personal-affiliation">Political Science • University of Wisconsin–Madison</p>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Navigation -->
-  <nav class="uw-nav-menu">
-    <div class="uw-nav-container">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  <!-- Personal Navigation -->
+  <div class="personal-nav">
+    <div class="uw-row">
+      <nav class="uw-nav-menu" aria-label="Main Menu">
+        <ul style="display: flex; justify-content: center; margin: 0; padding: 0; list-style: none;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="projects.html" class="current-page" aria-current="page">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
-
-  <!-- Breadcrumbs -->
-  <nav class="uw-breadcrumbs">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li>Tornado Event Visualization</li>
-    </ul>
-  </nav>
+  </div>
 
   <!-- Main Content -->
-  <main class="uw-row">
-    <a href="projects.html" class="project-link back-link">← Back to Projects</a>
-    
-    <h1>Tornado Event Visualization Dashboard</h1>
-    
-    <div class="project-tags">
-      <span class="project-tag">Streamlit</span>
-      <span class="project-tag">Altair</span>
-      <span class="project-tag">Collaborative Project</span>
-      <span class="project-tag">Python</span>
-      <span class="project-tag">Data Visualization</span>
-    </div>
+  <main id="main">
+    <div class="project-container">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="projects.html">Projects</a>
+        <span>/</span>
+        Tornado Event Visualization
+      </nav>
 
-    <p class="project-overview">
-      A collaborative Streamlit dashboard project that visualizes tornado patterns across the United States, featuring interactive analysis of frequency, size distribution, and geographic intensity patterns.
-    </p>
+      <a href="projects.html" class="back-link">← Back to Projects</a>
+      
+      <h1 class="project-title">Tornado Event Visualization Dashboard</h1>
+      
+      <div class="project-tags">
+        <span class="project-tag">Streamlit</span>
+        <span class="project-tag">Altair</span>
+        <span class="project-tag">Collaborative Project</span>
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Data Visualization</span>
+      </div>
 
-    <div class="uw-content-box">
-      <h2>Project Overview</h2>
-      <p class="project-details">
-        This project was developed as part of a collaborative effort to create an interactive narrative around tornado events in the United States. I contributed multiple modules to a comprehensive Streamlit dashboard that allows users to explore tornado data through various analytical lenses.
+      <p class="project-overview">
+        A collaborative Streamlit dashboard project that visualizes tornado patterns across the United States, featuring interactive analysis of frequency, size distribution, and geographic intensity patterns.
       </p>
-      <p class="project-details">
-        The dashboard combines temporal analysis, geographic visualization, and statistical insights to provide a comprehensive view of tornado patterns, making complex meteorological data accessible through intuitive interactive visualizations.
-      </p>
-    </div>
 
-    <div class="uw-content-box">
-      <h2>My Contributions</h2>
-      <p class="project-details">
-        <strong>Monthly Frequency Analysis:</strong> Developed interactive charts showing seasonal tornado patterns and monthly occurrence rates across different years.
-      </p>
-      <p class="project-details">
-        <strong>Size Distribution Visualization:</strong> Created visualizations analyzing tornado intensity distributions using the Enhanced Fujita Scale, revealing patterns in storm severity.
-      </p>
-      <p class="project-details">
-        <strong>State-wise Intensity Mapping:</strong> Built geographic visualizations showing tornado intensity patterns across different states, highlighting regional variations in storm characteristics.
-      </p>
-      <p class="project-details">
-        <strong>Interactive Plot Development:</strong> Utilized Altair to create responsive, interactive visualizations that allow users to filter and explore data dynamically.
-      </p>
-    </div>
+      <div class="content-section">
+        <h2 class="section-title">Project Overview</h2>
+        <p class="section-content">
+          This project was developed as part of a collaborative effort to create an interactive narrative around tornado events in the United States. I contributed multiple modules to a comprehensive Streamlit dashboard that allows users to explore tornado data through various analytical lenses.
+        </p>
+        <p class="section-content">
+          The dashboard combines temporal analysis, geographic visualization, and statistical insights to provide a comprehensive view of tornado patterns, making complex meteorological data accessible through intuitive interactive visualizations.
+        </p>
+      </div>
 
-    <div class="uw-content-box">
-      <h2>Technical Implementation</h2>
-      <p class="project-details">
-        The project leverages Streamlit for the web interface and Altair for creating sophisticated interactive visualizations. The dashboard processes historical tornado data from the Storm Prediction Center, applying data cleaning and transformation techniques to ensure accurate analysis.
-      </p>
-      <p class="project-details">
-        Each module was designed with modularity in mind, allowing for easy integration into the larger dashboard while maintaining individual functionality. The collaborative nature of the project required careful coordination of data pipelines and consistent visualization styling.
-      </p>
-    </div>
+      <div class="content-section">
+        <h2 class="section-title">My Contributions</h2>
+        <div class="contribution-item">
+          <div class="contribution-title">Monthly Frequency Analysis:</div>
+          <p class="section-content">Developed interactive charts showing seasonal tornado patterns and monthly occurrence rates across different years.</p>
+        </div>
+        <div class="contribution-item">
+          <div class="contribution-title">Size Distribution Visualization:</div>
+          <p class="section-content">Created visualizations analyzing tornado intensity distributions using the Enhanced Fujita Scale, revealing patterns in storm severity.</p>
+        </div>
+        <div class="contribution-item">
+          <div class="contribution-title">State-wise Intensity Mapping:</div>
+          <p class="section-content">Built geographic visualizations showing tornado intensity patterns across different states, highlighting regional variations in storm characteristics.</p>
+        </div>
+        <div class="contribution-item">
+          <div class="contribution-title">Interactive Plot Development:</div>
+          <p class="section-content">Utilized Altair to create responsive, interactive visualizations that allow users to filter and explore data dynamically.</p>
+        </div>
+      </div>
 
-    <div class="uw-content-box">
-      <h2>Key Insights</h2>
-      <p class="project-details">
-        The dashboard reveals significant seasonal patterns in tornado activity, with peak occurrences during spring months in the central United States. State-wise analysis shows clear geographic clustering of high-intensity tornadoes in traditional "Tornado Alley" regions.
-      </p>
-      <p class="project-details">
-        Interactive features allow users to discover correlations between tornado frequency, intensity, and geographic factors, providing valuable insights for both educational and research purposes.
-      </p>
-    </div>
+      <div class="content-section">
+        <h2 class="section-title">Technical Implementation</h2>
+        <p class="section-content">
+          The project leverages Streamlit for the web interface and Altair for creating sophisticated interactive visualizations. The dashboard processes historical tornado data from the Storm Prediction Center, applying data cleaning and transformation techniques to ensure accurate analysis.
+        </p>
+        <p class="section-content">
+          Each module was designed with modularity in mind, allowing for easy integration into the larger dashboard while maintaining individual functionality. The collaborative nature of the project required careful coordination of data pipelines and consistent visualization styling.
+        </p>
+      </div>
 
-    <div class="project-links">
-      <a href="https://si649-narrative-project.streamlit.app/" target="_blank" class="project-link live-link">
-        View Live Dashboard
-      </a>
-      <a href="https://github.com/oscar10408/tornado_interactive_dashboard" target="_blank" class="project-link github-link">
-        View Source Code
-      </a>
+      <div class="content-section">
+        <h2 class="section-title">Key Insights</h2>
+        <p class="section-content">
+          The dashboard reveals significant seasonal patterns in tornado activity, with peak occurrences during spring months in the central United States. State-wise analysis shows clear geographic clustering of high-intensity tornadoes in traditional "Tornado Alley" regions.
+        </p>
+        <p class="section-content">
+          Interactive features allow users to discover correlations between tornado frequency, intensity, and geographic factors, providing valuable insights for both educational and research purposes.
+        </p>
+      </div>
+
+      <div class="project-links">
+        <a href="https://si649-narrative-project.streamlit.app/" target="_blank" class="project-link live-link">
+          View Live Dashboard
+        </a>
+        <a href="https://github.com/oscar10408/tornado_interactive_dashboard" target="_blank" class="project-link github-link">
+          View Source Code
+        </a>
+      </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="uw-footer">
-    <small>&copy; 2025 Zhanyang Liu</small>
+  <footer class="personal-footer">
+    <div class="uw-row">
+      <p>&copy; 2025 Zhanyang Liu • Political Science, University of Wisconsin–Madison</p>
+    </div>
   </footer>
+
+  <script src="js/_uw-style.min.js?version=3.2.6"></script>
 </body>
 </html>
