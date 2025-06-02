@@ -1,181 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" class="no-js">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV | Zhanyang Liu</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
   <link rel="preload" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/redhat-display-latin.v14.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/redhat-text-latin.v13.woff2" as="font" type="font/woff2" crossorigin>
+  <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'')})(document.documentElement)</script>
+  <title>CV | Zhanyang Liu</title>
   <link rel="stylesheet" crossorigin type="text/css" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/fonts.css" />
+  <link rel="stylesheet" href="css/uw-style.css?version=3.2.6">
   <style>
-    :root {
-      --uwSiteTitleFont: Red Hat Display, sans-serif;
-      --uwSiteTaglineFont: Red Hat Display, sans-serif;
-      --uwTextFont: Red Hat Text, sans-serif;
-      --uwCopyFont: Red Hat Text, sans-serif;
-      --uwDisplayFont: Red Hat Display, sans-serif;
-      --uwButtonFont: Red Hat Text, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      color: #333333;
-      font-family: var(--uwTextFont);
-      font-weight: 400;
-      line-height: 1.625;
-      background-color: #fff;
-    }
-
-    /* UW Global Bar */
-    .uw-global-bar {
-      background-color: #c5050c;
-      color: white;
-      padding: 0 1rem;
-      display: flex;
-      justify-content: space-between;
-      text-transform: uppercase;
-      font-size: 0.825rem;
-      font-weight: 620;
-      font-family: var(--uwDisplayFont);
-    }
-
-    .uw-global-name-link {
-      color: white;
-      line-height: 2.2rem;
-      text-decoration: none;
-    }
-
-    .uw-global-name-link:hover {
-      text-decoration: none;
-    }
-
-    /* Header */
-    .uw-header {
+    /* Custom styles for personal branding */
+    .personal-header {
       background-color: white;
-      border-bottom: 1px solid #cfcfcf;
-      padding: 1rem 0;
+      border-bottom: 2px solid #c5050c;
+      padding: 1.5rem 0;
     }
-
-    .uw-header-container {
+    
+    .personal-header-container {
       max-width: 62.5em;
       margin: 0 auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       padding: 0 1rem;
     }
-
-    .uw-site-title {
-      font-weight: 800;
+    
+    .personal-branding {
+      display: flex;
+      align-items: center;
+    }
+    
+    .personal-name {
       font-family: var(--uwSiteTitleFont);
-      font-size: 1.5rem;
-      line-height: 1.1;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #333;
       margin: 0;
     }
-
-    .uw-site-title a {
+    
+    .personal-affiliation {
+      font-family: var(--uwTextFont);
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0;
+      font-weight: 400;
+    }
+    
+    .personal-nav {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .personal-nav .uw-nav-menu {
+      background-color: transparent;
+    }
+    
+    .personal-nav .uw-nav-menu a {
+      color: #495057;
+      font-weight: 500;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+    
+    .personal-nav .uw-nav-menu a:hover {
       color: #c5050c;
-      text-decoration: none;
+      border-bottom-color: #c5050c;
+      background-color: transparent;
     }
-
-    /* Navigation */
-    .uw-nav-menu {
-      background-color: #c5050c;
-      margin: 0;
-      padding: 0;
+    
+    .personal-nav .uw-nav-menu a.current-page {
+      color: #c5050c;
+      font-weight: 600;
+      border-bottom-color: #c5050c;
     }
-
-    .uw-nav-container {
-      max-width: 62.5em;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      padding: 0 1rem;
-    }
-
-    .uw-nav-menu ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      align-items: center;
-    }
-
-    .uw-nav-menu li {
-      margin: 0;
-    }
-
-    .uw-nav-menu a {
-      display: inline-block;
-      font-family: var(--uwDisplayFont);
-      font-size: 1rem;
-      font-weight: 650;
-      line-height: 1.25;
-      color: white;
-      padding: 1.05rem 0.95rem;
-      text-decoration: none;
-      border-bottom: 0.2rem solid transparent;
-      transition: border-bottom-color 0.2s ease;
-    }
-
-    .uw-nav-menu a:hover,
-    .uw-nav-menu a.active {
-      border-bottom-color: white;
-    }
-
-    /* Main Content */
-    .uw-row {
-      max-width: 62.5em;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    h1 {
-      font-weight: 630;
-      font-size: 2.25rem;
-      font-family: var(--uwDisplayFont);
-      line-height: 1.3;
-      color: #333333;
-      margin-bottom: 2rem;
-    }
-
-    /* CV Container */
+    
     .cv-container {
-      background-color: #f7f7f7;
-      border: 1px solid #cfcfcf;
-      border-radius: 4px;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
+      max-width: 50rem;
+      margin: 0 auto;
+      padding: 0 1rem;
     }
-
-    iframe {
-      width: 100%;
-      height: 90vh;
-      border: none;
-      border-radius: 4px;
-      background-color: white;
+    
+    .page-title {
+      font-family: var(--uwDisplayFont);
+      font-weight: 650;
+      color: #333;
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #c5050c;
+      display: inline-block;
     }
-
-    /* CV Header */
+    
     .cv-header {
-      background-color: #f7f7f7;
-      border-bottom: 4px solid #c5050c;
-      padding: 1.75rem 2rem;
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 2rem;
       text-align: center;
-      border-radius: 4px;
+      margin-bottom: 2rem;
+      border-left: 4px solid #c5050c;
     }
-
+    
     .cv-description {
-      color: #6c757d;
+      color: #555;
       margin-bottom: 1.5rem;
       font-size: 1.125rem;
       line-height: 1.6;
+      font-family: var(--uwTextFont);
     }
-
+    
     .download-link {
       display: inline-flex;
       align-items: center;
@@ -192,125 +127,157 @@
       border: 2px solid #0479a8;
       box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
     }
-
+    
     .download-link:hover {
       background-color: white;
       color: #0479a8;
       text-decoration: none;
     }
-
-    /* Footer */
-    .uw-footer {
-      background-color: #282728;
-      border-top: 5px solid #c5050c;
-      color: #adadad;
+    
+    .pdf-container {
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #c5050c;
+    }
+    
+    .pdf-frame {
+      width: 100%;
+      height: 90vh;
+      border: none;
+      border-radius: 4px;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .pdf-fallback {
       text-align: center;
-      padding: 2rem 0 1rem;
-      margin-top: 3rem;
+      padding: 2rem;
+      color: #666;
+      font-family: var(--uwTextFont);
     }
-
-    .uw-footer small {
-      font-size: 0.925rem;
+    
+    .pdf-fallback p {
+      margin-bottom: 1rem;
     }
-
-    /* Responsive Design */
+    
+    .personal-footer {
+      background-color: #f8f9fa;
+      border-top: 1px solid #e9ecef;
+      padding: 2rem 0;
+      margin-top: 4rem;
+      text-align: center;
+    }
+    
+    .personal-footer p {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    
+    /* Mobile responsiveness */
     @media (max-width: 768px) {
-      .uw-nav-menu ul {
+      .personal-header-container {
         flex-direction: column;
-        width: 100%;
-      }
-
-      .uw-nav-menu a {
-        padding: 0.75rem 1rem;
-        width: 100%;
+        gap: 1rem;
         text-align: center;
       }
-
-      h1 {
-        font-size: 1.75rem;
+      
+      .personal-branding {
+        text-align: center;
       }
-
-      iframe {
-        height: 70vh;
+      
+      .personal-name {
+        font-size: 1.5rem;
+      }
+      
+      .cv-container {
+        padding: 0 0.5rem;
       }
       
       .cv-header {
-        padding: 1.25rem 1.5rem;
+        padding: 1.5rem;
       }
-
-      .cv-container {
+      
+      .pdf-container {
         padding: 0.75rem;
       }
-    }
-
-    @media (min-width: 40em) {
-      .uw-site-title {
-        font-size: 1.7rem;
-      }
-    }
-
-    @media (min-width: 64em) {
-      .uw-site-title {
-        font-size: 1.8rem;
-      }
-    }
-
-    @media (min-width: 75em) {
-      .uw-site-title {
-        font-size: 2rem;
+      
+      .pdf-frame {
+        height: 70vh;
       }
     }
   </style>
 </head>
 <body>
-  <!-- UW Global Bar -->
-  <div class="uw-global-bar">
-    <a class="uw-global-name-link" href="https://www.wisc.edu">
-      University of Wisconsin–Madison
-    </a>
-  </div>
-
-  <!-- Header -->
-  <header class="uw-header">
-    <div class="uw-header-container">
-      <h1 class="uw-site-title">
-        <a href="index.html">Zhanyang Liu</a>
-      </h1>
+  <a class="uw-show-on-focus" href="#main" id="uw-skip-link">Skip to main content</a>
+  
+  <!-- Personal Header -->
+  <header class="personal-header">
+    <div class="personal-header-container">
+      <div class="personal-branding">
+        <div>
+          <h1 class="personal-name">Zhanyang Liu</h1>
+          <p class="personal-affiliation">Political Science • University of Wisconsin–Madison</p>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Navigation -->
-  <nav class="uw-nav-menu">
-    <div class="uw-nav-container">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cv.html" class="active">CV</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  <!-- Personal Navigation -->
+  <div class="personal-nav">
+    <div class="uw-row">
+      <nav class="uw-nav-menu" aria-label="Main Menu">
+        <ul style="display: flex; justify-content: center; margin: 0; padding: 0; list-style: none;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html" class="current-page" aria-current="page">CV</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
+  </div>
 
   <!-- Main Content -->
-  <main class="uw-row">
-    <h1>Curriculum Vitae</h1>
-    
+  <main id="main">
     <div class="cv-container">
-      <iframe src="Zhanyang%20Liu_CV.pdf"></iframe>
-    </div>
+      <h2 class="page-title">Curriculum Vitae</h2>
+      
+      <div class="cv-header">
+        <p class="cv-description">
+          You can view my CV below or download a copy for offline reading.
+        </p>
+        <a href="Zhanyang%20Liu_CV.pdf" download class="download-link">
+          📄 Download CV
+        </a>
+      </div>
 
-    <div class="cv-header">
-      <p class="cv-description">You can view my CV below or download a copy for offline reading.</p>
-      <a href="Zhanyang%20Liu_CV.pdf" download class="download-link">
-        Download CV
-      </a>
+      <div class="pdf-container">
+        <iframe 
+          src="Zhanyang%20Liu_CV.pdf" 
+          class="pdf-frame"
+          title="Zhanyang Liu CV"
+          loading="lazy">
+          <div class="pdf-fallback">
+            <p>Your browser doesn't support PDF viewing.</p>
+            <a href="Zhanyang%20Liu_CV.pdf" download class="download-link">
+              📄 Download CV
+            </a>
+          </div>
+        </iframe>
+      </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="uw-footer">
-    <small>&copy; 2025 Zhanyang Liu</small>
+  <footer class="personal-footer">
+    <div class="uw-row">
+      <p>&copy; 2025 Zhanyang Liu • Political Science, University of Wisconsin–Madison</p>
+    </div>
   </footer>
+
+  <script src="js/_uw-style.min.js?version=3.2.6"></script>
 </body>
 </html>
