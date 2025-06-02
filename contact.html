@@ -10,6 +10,82 @@
       font-weight: bold;
       color: #0d6efd;
     }
+
+    .container-narrow {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .contact-card {
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .contact-intro {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: #495057;
+      min-width: 80px;
+    }
+
+    .contact-link {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .contact-link:hover {
+      color: #0b5ed7;
+      text-decoration: underline;
+    }
+
+    .contact-footer {
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .contact-footer-text {
+      color: #6c757d;
+      margin: 0;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .contact-label {
+        min-width: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -31,17 +107,30 @@
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container container-narrow">
     <h1 class="mb-4">Contact</h1>
 
-    <p>If you'd like to connect or collaborate, feel free to reach out through any of the channels below:</p>
+    <div class="contact-card">
+      <p class="contact-intro">
+        If you'd like to connect or collaborate, feel free to reach out through any of the channels below:
+      </p>
 
-    <ul class="list-unstyled">
-      <li><strong>Email:</strong> <a href="mailto:janezhanyang2024@outlook.com">janezhanyang2024@outlook.com</a></li>
-      <li><strong>GitHub:</strong> <a href="https://github.com/zhanyang-727" target="_blank">zhanyang-727</a></li>
-    </ul>
+      <div class="contact-item">
+        <span class="contact-label">Email:</span>
+        <a href="mailto:janezhanyang2024@outlook.com" class="contact-link">janezhanyang2024@outlook.com</a>
+      </div>
 
-    <p>I am always open to discussing research, data projects, or professional opportunities.</p>
+      <div class="contact-item">
+        <span class="contact-label">GitHub:</span>
+        <a href="https://github.com/zhanyang-727" target="_blank" class="contact-link">zhanyang-727</a>
+      </div>
+    </div>
+
+    <div class="contact-footer">
+      <p class="contact-footer-text">
+        I am always open to discussing research, data projects, or professional opportunities.
+      </p>
+    </div>
   </div>
 
   <footer class="bg-light text-center py-3 mt-5">

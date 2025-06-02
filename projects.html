@@ -10,6 +10,87 @@
       font-weight: bold;
       color: #0d6efd;
     }
+
+    .container-narrow {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .project-card {
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .project-card:hover {
+      background-color: #f1f3f4;
+      border-color: #dee2e6;
+    }
+
+    .project-title {
+      color: #495057;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .project-description {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .live-link {
+      background-color: #0d6efd;
+      color: white;
+    }
+
+    .live-link:hover {
+      background-color: #0b5ed7;
+      color: white;
+    }
+
+    .github-link {
+      background-color: white;
+      color: #6c757d;
+      border: 1px solid #dee2e6;
+    }
+
+    .github-link:hover {
+      background-color: #f8f9fa;
+      color: #495057;
+      border-color: #adb5bd;
+    }
+
+    @media (max-width: 768px) {
+      .project-links {
+        flex-direction: column;
+      }
+
+      .project-link {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -31,30 +112,52 @@
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container container-narrow">
     <h1 class="mb-4">Projects</h1>
 
-    <h3>MSI Capstone Project: Electric Vehicle Sales Visualization</h3>
-    <p>This project visualizes trends in electric vehicle (EV) sales across the United States using Streamlit. I designed a geographic and temporal interface for exploring patterns by state and year.</p>
-    <ul>
-      <li><a href="https://si699ev-sales-visualization-teamsourpatch.streamlit.app/" target="_blank">Live Dashboard</a></li>
-      <li><a href="https://github.com/zhanyang-727/SI699_ev-sales-visualization" target="_blank">GitHub Repository</a></li>
-    </ul>
+    <div class="project-card">
+      <h3 class="project-title">MSI Capstone Project: Electric Vehicle Sales Visualization</h3>
+      <p class="project-description">
+        This project visualizes trends in electric vehicle (EV) sales across the United States using Streamlit. I designed a geographic and temporal interface for exploring patterns by state and year.
+      </p>
+      <div class="project-links">
+        <a href="https://si699ev-sales-visualization-teamsourpatch.streamlit.app/" target="_blank" class="project-link live-link">
+          Live Dashboard
+        </a>
+        <a href="https://github.com/zhanyang-727/SI699_ev-sales-visualization" target="_blank" class="project-link github-link">
+          GitHub Repository
+        </a>
+      </div>
+    </div>
 
-    <h3>Tornado Event Visualization Dashboard</h3>
-    <p>As part of a collaborative project, I built multiple modules in a Streamlit dashboard to visualize tornado patterns in the U.S. — including monthly frequency, size distribution, and state-wise intensity. The dashboard offers interactive plots built with Altair.</p>
-    <ul>
-      <li><a href="https://si649-narrative-project.streamlit.app/" target="_blank">Live Dashboard</a></li>
-      <li><a href="https://github.com/oscar10408/tornado_interactive_dashboard" target="_blank">GitHub Repository</a></li>
-    </ul>
+    <div class="project-card">
+      <h3 class="project-title">Tornado Event Visualization Dashboard</h3>
+      <p class="project-description">
+        As part of a collaborative project, I built multiple modules in a Streamlit dashboard to visualize tornado patterns in the U.S. — including monthly frequency, size distribution, and state-wise intensity. The dashboard offers interactive plots built with Altair.
+      </p>
+      <div class="project-links">
+        <a href="https://si649-narrative-project.streamlit.app/" target="_blank" class="project-link live-link">
+          Live Dashboard
+        </a>
+        <a href="https://github.com/oscar10408/tornado_interactive_dashboard" target="_blank" class="project-link github-link">
+          GitHub Repository
+        </a>
+      </div>
+    </div>
 
-    <h3>Religious Framing Classifier in Political Discourse</h3>
-    <p>
-    This project applies NLP techniques to classify religious references in political speech as either emphasizing group identity or personal religiosity. Using a fine-tuned sentence-BERT model and SHAP for interpretability, I built a full pipeline from data annotation and preprocessing to model training and analysis. The approach combines supervised learning with domain knowledge from political science to explore how religious rhetoric is framed in public discourse.
-    </p>
+    <div class="project-card">
+      <h3 class="project-title">Religious Framing Classifier in Political Discourse</h3>
+      <p class="project-description">
+        This project applies NLP techniques to classify religious references in political speech as either emphasizing group identity or personal religiosity. Using a fine-tuned sentence-BERT model and SHAP for interpretability, I built a full pipeline from data annotation and preprocessing to model training and analysis. The approach combines supervised learning with domain knowledge from political science to explore how religious rhetoric is framed in public discourse.
+      </p>
+    </div>
 
-    <h3>Political Opinion Clustering from Israeli Election Data</h3>
-    <p>Applied unsupervised learning (PCA, K-means) to election survey data to uncover clusters in political attitudes among voters in Israel. Generated clean visual summaries of each latent group.</p>
+    <div class="project-card">
+      <h3 class="project-title">Political Opinion Clustering from Election Data in the Middle East</h3>
+      <p class="project-description">
+        Applied unsupervised learning (PCA, K-means) to election survey data to uncover clusters in political attitudes among voters in the Middle East. Generated clean visual summaries of each latent group.
+      </p>
+    </div>
   </div>
 
   <footer class="bg-light text-center py-3 mt-5">

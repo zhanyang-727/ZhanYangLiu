@@ -10,6 +10,72 @@
       font-weight: bold;
       color: #0d6efd;
     }
+
+    .container-narrow {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .research-card {
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .research-card:hover {
+      background-color: #f1f3f4;
+      border-color: #dee2e6;
+    }
+
+    .research-title {
+      color: #495057;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .research-description {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-radius: 12px;
+    }
+
+    .status-completed {
+      background-color: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+    }
+
+    .status-ongoing {
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeaa7;
+    }
+
+    .methodology-tags {
+      margin-top: 0.75rem;
+    }
+
+    .method-tag {
+      display: inline-block;
+      background-color: #e7f3ff;
+      color: #0d6efd;
+      padding: 0.2rem 0.5rem;
+      margin: 0.2rem 0.3rem 0.2rem 0;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
@@ -31,20 +97,64 @@
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container container-narrow">
     <h1 class="mb-4">Research</h1>
 
-    <h3>Arab Protest Behavior in Israel’s 2023 Judicial Crisis</h3>
-    <p>Master’s thesis combining survey data, fieldwork in Haifa, and interrupted time series analysis. Investigates intra-group variation in protest participation among arab citizens of Israel.</p>
+    <div class="research-card">
+      <h3 class="research-title">Arab Protest Behavior in Israel's 2023 Judicial Crisis</h3>
+      <span class="status-badge status-completed">Master's Thesis</span>
+      <p class="research-description">
+        Master's thesis combining survey data, fieldwork in Haifa, and interrupted time series analysis. Investigates intra-group variation in protest participation among Arab citizens of Israel.
+      </p>
+      <div class="methodology-tags">
+        <span class="method-tag">Survey Data</span>
+        <span class="method-tag">Fieldwork</span>
+        <span class="method-tag">Time Series Analysis</span>
+        <span class="method-tag">Protest Behavior</span>
+      </div>
+    </div>
 
-    <h3>Religious Doctrine vs. Institutions in Political Speeches(Ongoing)</h3>
-    <p>Applies NLP techniques using fine-tuned sentence-BERT models to classify religious references in political speeches. Includes SHAP-based interpretability and time trend analysis.</p>
+    <div class="research-card">
+      <h3 class="research-title">Religious Doctrine vs. Institutions in Political Speeches</h3>
+      <span class="status-badge status-ongoing">Ongoing</span>
+      <p class="research-description">
+        Applies NLP techniques using fine-tuned sentence-BERT models to classify religious references in political speeches. Includes SHAP-based interpretability and time trend analysis.
+      </p>
+      <div class="methodology-tags">
+        <span class="method-tag">NLP</span>
+        <span class="method-tag">BERT Models</span>
+        <span class="method-tag">SHAP</span>
+        <span class="method-tag">Political Discourse</span>
+      </div>
+    </div>
 
-    <h3>State Reactions to Protest Movements(Ongoing)</h3>
-    <p>A comparative project using country-level and event-level data from Egypt (2011), Belarus (2020), and Russia (2012) to categorize regime types and analyze short-term response strategies.</p>
+    <div class="research-card">
+      <h3 class="research-title">State Reactions to Protest Movements</h3>
+      <span class="status-badge status-ongoing">Ongoing</span>
+      <p class="research-description">
+        A comparative project using country-level and event-level data from Egypt (2011), Belarus (2020), and Russia (2012) to categorize regime types and analyze short-term response strategies.
+      </p>
+      <div class="methodology-tags">
+        <span class="method-tag">Comparative Analysis</span>
+        <span class="method-tag">Event Data</span>
+        <span class="method-tag">Regime Analysis</span>
+        <span class="method-tag">MENA Studies</span>
+      </div>
+    </div>
 
-    <h3>Variation in Political Orientations in Israel(Ongoing)</h3>
-    <p>Clustering-based analysis of voter survey data to uncover subgroups, incorporating PCA and K-means clustering.</p>
+    <div class="research-card">
+      <h3 class="research-title">Variation in Political Orientations in Israel</h3>
+      <span class="status-badge status-ongoing">Ongoing</span>
+      <p class="research-description">
+        Clustering-based analysis of voter survey data to uncover subgroups, incorporating PCA and K-means clustering.
+      </p>
+      <div class="methodology-tags">
+        <span class="method-tag">PCA</span>
+        <span class="method-tag">K-means Clustering</span>
+        <span class="method-tag">Survey Analysis</span>
+        <span class="method-tag">Political Behavior</span>
+      </div>
+    </div>
   </div>
 
   <footer class="bg-light text-center py-3 mt-5">
