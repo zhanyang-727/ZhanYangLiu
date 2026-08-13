@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code · Zhanyang Liu</title>
+  <meta name="description" content="Data science and computational projects by Zhanyang Liu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="avatar" src="avatar.jpg" alt="Zhanyang Liu">
+      <div class="identity">
+        <h1>Zhanyang Liu</h1>
+        <p class="role">Ph.D. Student in Political Science</p>
+        <p class="affil">University of Wisconsin–Madison</p>
+        <ul class="contact-links">
+          <li><a href="mailto:zhanyang.liu@wisc.edu">Email</a></li>
+          <li><a href="https://github.com/zhanyang-727" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="Zhanyang%20Liu_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Main">
+    <div class="nav-inner">
+      <a href="index.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="updates.html">Updates</a>
+      <a href="code.html" aria-current="page">Code</a>
+      <a href="Zhanyang%20Liu_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section>
+      <h2 class="section-title">Code &amp; Projects</h2>
+      <p class="page-note">Selected data science and computational social science projects.</p>
+
+      <div class="work">
+        <h3><a href="project-ev-sales.html">Electric Vehicle Sales Visualization</a></h3>
+        <p>
+          An interactive Streamlit application for exploring electric-vehicle adoption across
+          the United States by state and year. Built as my master's capstone, it turns complex
+          transportation data into a clear geographic and temporal interface.
+        </p>
+        <p class="meta-line">Python · Streamlit · Geographic analysis · Data visualization</p>
+        <div class="work-links">
+          <a href="project-ev-sales.html">Details</a>
+        </div>
+      </div>
+
+      <div class="work">
+        <h3><a href="project-tornado.html">Tornado Event Visualization Dashboard</a></h3>
+        <p>
+          A collaborative Streamlit dashboard visualizing U.S. tornado patterns — monthly
+          frequency, size distribution, and state-level intensity — through interactive
+          Altair charts for meteorological data exploration.
+        </p>
+        <p class="meta-line">Python · Streamlit · Altair · Meteorological data</p>
+        <div class="work-links">
+          <a href="project-tornado.html">Details</a>
+        </div>
+      </div>
+
+      <div class="work">
+        <h3>Religious Framing Classifier<span class="status muted">In development</span></h3>
+        <p>
+          A natural language processing pipeline that classifies religious references in
+          political speech as emphasizing group identity or personal religiosity, using a
+          fine-tuned sentence-BERT model with SHAP interpretability — from annotation and
+          preprocessing through training and analysis.
+        </p>
+        <p class="meta-line">Python · Transformers · Sentence-BERT · SHAP</p>
+      </div>
+
+      <div class="work">
+        <h3>Political Opinion Clustering in the Middle East<span class="status muted">Research</span></h3>
+        <p>
+          Applies unsupervised learning (PCA, K-means) to election survey data to surface
+          distinct clusters of political attitudes among voters in the Middle East, with clean
+          visual summaries of each latent group and its demographic correlates.
+        </p>
+        <p class="meta-line">Python · PCA · K-means · Survey data</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Zhanyang Liu · Political Science, University of Wisconsin–Madison ·
+      <a href="mailto:zhanyang.liu@wisc.edu">zhanyang.liu@wisc.edu</a></p>
+  </footer>
+</body>
+</html>

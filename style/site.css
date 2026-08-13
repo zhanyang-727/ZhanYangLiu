@@ -1,0 +1,339 @@
+/* ============================================================
+   Zhanyang Liu — personal site
+   Clean, minimal academic style. Madison red accent (#c5050c).
+   ============================================================ */
+
+:root {
+  --red: #c5050c;
+  --red-dark: #9b0000;
+  --ink: #1d1d1f;
+  --body: #33333a;
+  --muted: #6b6b73;
+  --faint: #8a8a92;
+  --rule: #e7e7e4;
+  --rule-soft: #f0f0ee;
+  --bg: #ffffff;
+  --max: 720px;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--body);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.72;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  border-top: 4px solid var(--red);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--red);
+  color: #fff;
+  padding: .5rem .9rem;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus { left: 0; }
+
+a { color: var(--red); text-decoration: none; }
+a:hover { color: var(--red-dark); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---------- Header band ---------- */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  background: #fff;
+}
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.6rem 1.4rem 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+.avatar {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+.identity { min-width: 0; }
+.identity h1 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 2.15rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 .35rem;
+}
+.identity .role {
+  font-size: 1.02rem;
+  color: var(--body);
+  margin: 0 0 .1rem;
+}
+.identity .affil {
+  font-size: 1.02rem;
+  color: var(--muted);
+  margin: 0 0 .85rem;
+}
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem 1.1rem;
+  font-size: .93rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.contact-links a {
+  color: var(--muted);
+  border-bottom: 1px solid transparent;
+}
+.contact-links a:hover {
+  color: var(--red);
+  text-decoration: none;
+  border-bottom-color: var(--red);
+}
+
+/* ---------- Navigation ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: saturate(180%) blur(6px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem 1.6rem;
+}
+.site-nav a {
+  display: inline-block;
+  padding: .85rem 0;
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.site-nav a:hover {
+  color: var(--red);
+  text-decoration: none;
+}
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--red);
+}
+
+/* ---------- Main ---------- */
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.8rem 1.4rem 1rem;
+}
+
+.lead {
+  font-size: 1.24rem;
+  line-height: 1.6;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 400;
+  margin: 0 0 2rem;
+}
+.lead .accent { color: var(--red); }
+
+p { margin: 0 0 1.15rem; }
+
+section { margin-bottom: 2.8rem; }
+
+h2.section-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--ink);
+  margin: 0 0 1.2rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+h2.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 44px;
+  height: 3px;
+  background: var(--red);
+}
+
+.page-note {
+  color: var(--muted);
+  font-size: .95rem;
+  font-style: italic;
+  margin: -0.6rem 0 1.8rem;
+}
+
+/* ---------- Definition-style rows (education / awards) ---------- */
+.entry-list { margin: 0; padding: 0; list-style: none; }
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: .85rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.entry:last-child { border-bottom: none; }
+.entry .entry-main { min-width: 0; }
+.entry .entry-title {
+  color: var(--ink);
+  font-weight: 600;
+  margin: 0 0 .1rem;
+}
+.entry .entry-sub {
+  color: var(--muted);
+  font-size: .96rem;
+  margin: 0;
+}
+.entry .entry-meta {
+  color: var(--faint);
+  font-size: .9rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* ---------- Research / project blocks ---------- */
+.work { padding: 1.4rem 0; border-top: 1px solid var(--rule-soft); }
+.work:first-of-type { border-top: none; padding-top: .2rem; }
+.work h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.22rem;
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0 0 .5rem;
+}
+.work h3 a { color: var(--ink); }
+.work h3 a:hover { color: var(--red); }
+.status {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--red);
+  vertical-align: middle;
+  margin-left: .5rem;
+}
+.status.muted { color: var(--faint); }
+.work p { margin: 0 0 .7rem; color: var(--body); }
+.meta-line {
+  font-size: .88rem;
+  color: var(--faint);
+  margin: 0;
+}
+.work-links {
+  margin: .55rem 0 0;
+  font-size: .92rem;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+.work-links a { font-weight: 500; }
+
+/* ---------- Publications ---------- */
+.pub { padding: 1.2rem 0; border-top: 1px solid var(--rule-soft); }
+.pub:first-of-type { border-top: none; padding-top: .2rem; }
+.pub .pub-title { color: var(--ink); font-weight: 600; margin: 0 0 .25rem; }
+.pub .pub-cite { color: var(--muted); font-size: .96rem; margin: 0; }
+.pub .pub-cite em { color: var(--body); }
+
+/* ---------- Updates ---------- */
+.updates { margin: 0; padding: 0; list-style: none; }
+.update {
+  display: flex;
+  gap: 1.4rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.update:last-child { border-bottom: none; }
+.update .u-date {
+  flex: 0 0 6.2rem;
+  color: var(--red);
+  font-weight: 600;
+  font-size: .9rem;
+  letter-spacing: .02em;
+  padding-top: .12rem;
+}
+.update .u-text { margin: 0; color: var(--body); }
+
+/* ---------- Skills / grouped text ---------- */
+.skill-row {
+  display: flex;
+  gap: 1rem;
+  padding: .55rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: .98rem;
+}
+.skill-row:last-child { border-bottom: none; }
+.skill-row .k {
+  flex: 0 0 9.5rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+.skill-row .v { color: var(--body); margin: 0; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  max-width: var(--max);
+  margin: 2rem auto 0;
+  padding: 1.8rem 1.4rem 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--faint);
+  font-size: .88rem;
+  text-align: center;
+}
+.site-footer a { color: var(--muted); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.1rem;
+    padding: 2.1rem 1.2rem 1.7rem;
+  }
+  .contact-links { justify-content: center; }
+  .identity h1 { font-size: 1.9rem; }
+  .nav-inner { gap: .1rem 1.15rem; justify-content: center; }
+  .entry { flex-direction: column; gap: .25rem; }
+  .entry .entry-meta { text-align: left; }
+  .update { flex-direction: column; gap: .2rem; }
+  .update .u-date { flex-basis: auto; }
+  .skill-row { flex-direction: column; gap: .1rem; }
+  .skill-row .k { flex-basis: auto; }
+}

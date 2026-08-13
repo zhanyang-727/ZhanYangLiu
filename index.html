@@ -1,335 +1,143 @@
 <!DOCTYPE html>
-<html lang="en-US" class="no-js">
+<html lang="en-US">
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <link rel="preload" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/redhat-display-latin.v14.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/redhat-text-latin.v13.woff2" as="font" type="font/woff2" crossorigin>
-  <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'')})(document.documentElement)</script>
-  <title>Zhanyang Liu </title>
-  <link rel="stylesheet" crossorigin type="text/css" href="style/uw-style.css" />
-  <link rel="stylesheet" href="style/uw-style.css">
-  <style>
-    /* Custom styles for personal branding */
-    .personal-header {
-      background-color: white;
-      border-bottom: 2px solid #c5050c;
-      padding: 1.5rem 0;
-    }
-    
-    .personal-header-container {
-      max-width: 62.5em;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1rem;
-    }
-    
-    .personal-branding {
-      display: flex;
-      align-items: center;
-    }
-    
-    .personal-name {
-      font-family: var(--uwSiteTitleFont);
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #333;
-      margin: 0;
-    }
-    
-    .personal-affiliation {
-      font-family: var(--uwTextFont);
-      font-size: 0.9rem;
-      color: #666;
-      margin: 0;
-      font-weight: 400;
-    }
-    
-    .personal-nav {
-      background-color: #f8f9fa;
-      border-bottom: 1px solid #e9ecef;
-    }
-    
-    .personal-nav .uw-nav-menu {
-      background-color: transparent;
-    }
-    
-    .personal-nav .uw-nav-menu a {
-      color: #495057;
-      font-weight: 500;
-      padding: 0.75rem 1rem;
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s ease;
-    }
-    
-    .personal-nav .uw-nav-menu a:hover {
-      color: #c5050c;
-      border-bottom-color: #c5050c;
-      background-color: transparent;
-    }
-    
-    .personal-nav .uw-nav-menu a.current-page {
-      color: #c5050c;
-      font-weight: 600;
-      border-bottom-color: #c5050c;
-    }
-    
-    .home-container {
-      max-width: 50rem;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    
-    .hero-section {
-      text-align: center;
-      margin: 3rem 0 4rem 0;
-    }
-    
-    .hero-title {
-      font-family: var(--uwDisplayFont);
-      font-weight: 650;
-      font-size: 2.5rem;
-      color: #333;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: #555;
-      line-height: 1.6;
-      font-family: var(--uwTextFont);
-      font-style: italic;
-      max-width: 40rem;
-      margin: 0 auto;
-    }
-    
-    .content-section {
-      background-color: #f8f9fa;
-      border: 1px solid #e9ecef;
-      border-radius: 8px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border-left: 4px solid #c5050c;
-    }
-    
-    .section-title {
-      font-family: var(--uwDisplayFont);
-      font-weight: 650;
-      font-size: 1.375rem;
-      color: #333;
-      margin-bottom: 1rem;
-      position: relative;
-    }
-    
-    .section-title:before {
-      position: absolute;
-      left: 0;
-      height: 3px;
-      content: "";
-      width: 2rem;
-      top: -8px;
-      background-color: #c5050c;
-    }
-    
-    .section-content {
-      color: #555;
-      line-height: 1.6;
-      font-size: 1.125rem;
-      font-family: var(--uwTextFont);
-    }
-    
-    .highlight-skill {
-      background-color: #e7f3ff;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      font-weight: 500;
-      color: #0479a8;
-      font-size: 0.95rem;
-      display: inline-block;
-      margin: 0.1rem;
-    }
-    
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-    
-    .skill-category {
-      margin-bottom: 1.5rem;
-    }
-    
-    .skill-category-title {
-      font-weight: 625;
-      color: #333;
-      font-family: var(--uwDisplayFont);
-      margin-bottom: 0.5rem;
-    }
-    
-    .personal-footer {
-      background-color: #f8f9fa;
-      border-top: 1px solid #e9ecef;
-      padding: 2rem 0;
-      margin-top: 4rem;
-      text-align: center;
-    }
-    
-    .personal-footer p {
-      color: #666;
-      font-size: 0.9rem;
-      margin: 0;
-    }
-    
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      .personal-header-container {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
-      
-      .personal-branding {
-        text-align: center;
-      }
-      
-      .personal-name {
-        font-size: 1.5rem;
-      }
-      
-      .hero-title {
-        font-size: 2rem;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.1rem;
-      }
-      
-      .content-section {
-        padding: 1.5rem;
-      }
-      
-      .home-container {
-        padding: 0 0.5rem;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zhanyang Liu</title>
+  <meta name="description" content="Zhanyang Liu — PhD student in Political Science at the University of Wisconsin–Madison. Contentious and ethnic politics in the Middle East; computational social science.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/site.css">
 </head>
 <body>
-  <a class="uw-show-on-focus" href="#main" id="uw-skip-link">Skip to main content</a>
-  
-  <!-- Personal Header -->
-  <header class="personal-header">
-    <div class="personal-header-container">
-      <div class="personal-branding">
-        <img src="profile image.png" alt="Zhanyang Liu profile picture" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;">
-        <div>
-          <h1 class="personal-name">Zhanyang Liu</h1>
-          <p class="personal-affiliation">Political Science • University of Wisconsin–Madison</p>
-        </div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="avatar" src="avatar.jpg" alt="Zhanyang Liu">
+      <div class="identity">
+        <h1>Zhanyang Liu</h1>
+        <p class="role">Ph.D. Student in Political Science</p>
+        <p class="affil">University of Wisconsin–Madison</p>
+        <ul class="contact-links">
+          <li><a href="mailto:zhanyang.liu@wisc.edu">Email</a></li>
+          <li><a href="https://github.com/zhanyang-727" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="Zhanyang%20Liu_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+        </ul>
       </div>
     </div>
   </header>
 
-  <!-- Personal Navigation -->
-  <div class="personal-nav">
-    <div class="uw-row">
-      <nav class="uw-nav-menu" aria-label="Main Menu">
-        <ul style="display: flex; justify-content: center; margin: 0; padding: 0; list-style: none;">
-          <li><a href="index.html" class="current-page" aria-current="page">Home</a></li>
-          <li><a href="cv.html">CV</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+  <nav class="site-nav" aria-label="Main">
+    <div class="nav-inner">
+      <a href="index.html" aria-current="page">About</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="updates.html">Updates</a>
+      <a href="code.html">Code</a>
+      <a href="Zhanyang%20Liu_CV.pdf" target="_blank" rel="noopener">CV</a>
     </div>
-  </div>
+  </nav>
 
-  <!-- Main Content -->
   <main id="main">
-    <div class="home-container">
-      <!-- Hero Section -->
-      <div class="hero-section">
-        <h2 class="hero-title">Welcome!</h2>
-        <p class="hero-subtitle">
-          I'm a first-year PhD student in Political Science at the University of Wisconsin–Madison, with a background in both regional studies and data science.
-        </p>
-      </div>
+    <p class="lead">
+      I am a Ph.D. student in Political Science at the University of Wisconsin–Madison,
+      working at the intersection of <span class="accent">comparative politics</span> and
+      <span class="accent">computational social science</span>.
+    </p>
 
-      <!-- Professional Experience Section -->
-      <div class="content-section">
-        <h3 class="section-title">About Me</h3>
-        <p class="section-content">
-          My professional background spans academia, field research, and applied data science, with a focus on contentious politics and ethnic politics in the Middle East.
-        </p>
-      </div>
+    <section>
+      <h2 class="section-title">About</h2>
+      <p>
+        My background spans regional studies and data science, and my research centers on
+        contentious politics and ethnic politics in the Middle East and North Africa. I am
+        especially interested in political behavior, state responses to dissent, and how
+        religion and identity are mobilized in political discourse.
+      </p>
+      <p>
+        Methodologically, I combine natural language processing, causal inference, and
+        comparative analysis with sustained fieldwork and close attention to regional
+        context. Before Madison, I earned an M.S. in Information (Data Science &amp; Big Data
+        Analytics) and an M.A. in International &amp; Regional Studies (MENA) at the University
+        of Michigan, and a B.A. in Modern Hebrew at Beijing Foreign Studies University.
+      </p>
+    </section>
 
-      <!-- Skills & Languages Section -->
-      <div class="content-section">
-        <h3 class="section-title">Skills & Languages</h3>
-        
-        <div class="skill-category">
-          <div class="skill-category-title">Languages:</div>
-          <div class="skills-grid">
-            <span class="highlight-skill">English</span>
-            <span class="highlight-skill">Hebrew</span>
-            <span class="highlight-skill">Modern Standard Arabic</span>
-            <span class="highlight-skill">Mandarin Chinese</span>
-            <span class="highlight-skill">Levantine Arabic (Intermediate)</span>
+    <section>
+      <h2 class="section-title">Education</h2>
+      <ul class="entry-list">
+        <li class="entry">
+          <div class="entry-main">
+            <p class="entry-title">Ph.D. in Political Science</p>
+            <p class="entry-sub">University of Wisconsin–Madison</p>
           </div>
-        </div>
-
-        <div class="skill-category">
-          <div class="skill-category-title">Programming & Tools:</div>
-          <div class="skills-grid">
-            <span class="highlight-skill">Python</span>
-            <span class="highlight-skill">R</span>
-            <span class="highlight-skill">SQL</span>
-            <span class="highlight-skill">LaTeX</span>
-            <span class="highlight-skill">Transformers</span>
-            <span class="highlight-skill">spaCy</span>
-            <span class="highlight-skill">XGBoost</span>
-            <span class="highlight-skill">Streamlit</span>
+          <div class="entry-meta">2025 – present</div>
+        </li>
+        <li class="entry">
+          <div class="entry-main">
+            <p class="entry-title">M.S. in Information · M.A. in International &amp; Regional Studies (MENA)</p>
+            <p class="entry-sub">University of Michigan, Ann Arbor</p>
           </div>
-        </div>
-
-        <div class="skill-category">
-          <div class="skill-category-title">Methods & Analysis:</div>
-          <div class="skills-grid">
-            <span class="highlight-skill">Regression Modeling</span>
-            <span class="highlight-skill">Time Series Analysis</span>
-            <span class="highlight-skill">Topic Modeling</span>
-            <span class="highlight-skill">Clustering Techniques</span>
-            <span class="highlight-skill">Causal Inference</span>
+          <div class="entry-meta">2022 – 2025</div>
+        </li>
+        <li class="entry">
+          <div class="entry-main">
+            <p class="entry-title">B.A. in Modern Hebrew</p>
+            <p class="entry-sub">Beijing Foreign Studies University</p>
           </div>
-        </div>
-      </div>
+          <div class="entry-meta">2018 – 2022</div>
+        </li>
+      </ul>
+    </section>
 
-      <!-- Awards & Recognition Section -->
-      <div class="content-section">
-        <h3 class="section-title">Awards & Recognition</h3>
-        <p class="section-content">
-          I've been honored with several fellowships and research awards, including the 
-          <span class="highlight-skill">Rackham International Research Award</span>, 
-          <span class="highlight-skill">MIRS Fellowship</span>, and the 
-          <span class="highlight-skill">Mahfoud Bennoune Memorial Thesis Award</span>. 
-          These recognitions have supported my interdisciplinary training and sustained fieldwork, particularly in studying political behavior, state responses to dissent, and ethnic politics in the Middle East.
-        </p>
+    <section>
+      <h2 class="section-title">Skills &amp; Languages</h2>
+      <div class="skill-row">
+        <span class="k">Programming</span>
+        <p class="v">Python, R, SQL, LaTeX</p>
       </div>
-    </div>
+      <div class="skill-row">
+        <span class="k">Methods</span>
+        <p class="v">Regression &amp; time-series analysis, causal inference, machine learning, NLP &amp; topic modeling, clustering</p>
+      </div>
+      <div class="skill-row">
+        <span class="k">Languages</span>
+        <p class="v">Chinese (native), English (proficient), Hebrew (proficient), Modern Standard Arabic (fluent), Levantine Arabic (intermediate)</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Awards &amp; Fellowships</h2>
+      <ul class="entry-list">
+        <li class="entry">
+          <div class="entry-main">
+            <p class="entry-title">Mahfoud Bennoune Memorial Thesis Award</p>
+            <p class="entry-sub">CMENAS, University of Michigan</p>
+          </div>
+          <div class="entry-meta">2024 – 25</div>
+        </li>
+        <li class="entry">
+          <div class="entry-main">
+            <p class="entry-title">Rackham International Research Award</p>
+            <p class="entry-sub">University of Michigan</p>
+          </div>
+          <div class="entry-meta"></div>
+        </li>
+        <li class="entry">
+          <div class="entry-main">
+            <p class="entry-title">MIRS Fellowship &amp; International Travel Grant</p>
+            <p class="entry-sub">University of Michigan</p>
+          </div>
+          <div class="entry-meta">2022 – 2024</div>
+        </li>
+      </ul>
+    </section>
   </main>
 
-  <footer class="personal-footer">
-    <div class="uw-row">
-      <p>&copy; 2025 Zhanyang Liu • Political Science, University of Wisconsin–Madison</p>
-    </div>
+  <footer class="site-footer">
+    <p>© 2025 Zhanyang Liu · Political Science, University of Wisconsin–Madison ·
+      <a href="mailto:zhanyang.liu@wisc.edu">zhanyang.liu@wisc.edu</a></p>
   </footer>
-
-  <script src="js/_uw-style.min.js?version=3.2.6"></script>
 </body>
 </html>
