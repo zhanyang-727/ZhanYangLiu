@@ -13,36 +13,39 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <img class="avatar" src="avatar.jpg" alt="Zhanyang Liu">
-      <div class="identity">
-        <h1>Zhanyang Liu</h1>
-        <p class="role">Ph.D. Student in Political Science</p>
-        <p class="affil">University of Wisconsin–Madison</p>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Zhanyang Liu <span class="brand-cn" lang="zh">(刘瞻洋)</span></a>
+      <nav class="topnav" aria-label="Main">
+        <a href="index.html" aria-current="page">About</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="updates.html">Updates</a>
+        <a href="code.html">Code</a>
+        <a href="cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="home">
+    <div class="profile-layout">
+
+      <aside class="profile-card">
+        <img class="profile-photo" src="avatar.jpg" alt="Zhanyang Liu">
+        <h2 class="profile-name">Zhanyang Liu</h2>
+        <p class="profile-role">Ph.D. Student in Political Science</p>
+        <p class="profile-affil">University of Wisconsin–Madison</p>
         <ul class="contact-links">
           <li><a href="mailto:zhanyang.liu@wisc.edu">Email</a></li>
           <li><a href="https://github.com/zhanyang-727" target="_blank" rel="noopener">GitHub</a></li>
           <li><a href="cv.html">CV</a></li>
         </ul>
-      </div>
-    </div>
-  </header>
+      </aside>
 
-  <nav class="site-nav" aria-label="Main">
-    <div class="nav-inner">
-      <a href="index.html" aria-current="page">About</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="updates.html">Updates</a>
-      <a href="code.html">Code</a>
-      <a href="cv.html">CV</a>
-    </div>
-  </nav>
-
-  <main id="main">
-    <p class="lead">
-      Welcome!I am a Ph.D. student in Political Science at the University of Wisconsin–Madison,
+      <div class="intro">
+        <h1 class="welcome">Welcome<span>!</span></h1>
+        <p class="lead">
+      I am a Ph.D. student in Political Science at the University of Wisconsin–Madison,
       I hold research interests in <span class="accent">comparative politics</span> ,
       <span class="accent">computational social science</span>, and <span class="accent">International relations</span>.
     </p>
@@ -79,11 +82,14 @@
         <p class="v">Chinese (native), English (proficient), Hebrew (proficient), Modern Standard Arabic (fluent), Levantine Arabic (intermediate)</p>
       </div>
     </section>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">
     <p>© 2025 Zhanyang Liu · Political Science, University of Wisconsin–Madison ·
       <a href="mailto:zhanyang.liu@wisc.edu">zhanyang.liu@wisc.edu</a></p>
+    <p class="credit">Site design inspired by <a href="https://yiqingxu.org" target="_blank" rel="noopener">Yiqing Xu’s website</a>.</p>
   </footer>
 </body>
 </html>
