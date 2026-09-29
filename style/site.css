@@ -14,8 +14,8 @@
   --rule-soft: #f0f0ee;
   --bg: #ffffff;
   --max: 720px;
-  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --serif: "Red Hat Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --sans: "Red Hat Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -401,7 +401,7 @@ h2.section-title::after {
 }
 .brand:hover { color: var(--ink); text-decoration: none; }
 .brand-cn {
-  font-family: "Songti SC", "STSong", "SimSun", "Noto Serif SC", serif;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
   font-size: 1.35rem;
   color: var(--muted);
 }
@@ -456,7 +456,7 @@ main.home { max-width: 1120px; padding-top: 3.6rem; }
 .profile-card .contact-links { justify-content: center; }
 
 .welcome {
-  font-family: var(--sans);
+  font-family: var(--serif);
   font-weight: 700;
   font-size: 3.4rem;
   line-height: 1.05;
