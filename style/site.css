@@ -401,7 +401,7 @@ h2.section-title::after {
 }
 .brand:hover { color: var(--ink); text-decoration: none; }
 .brand-cn {
-  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "BiauKai", "AR PL UKai CN", serif;
   font-size: 1.35rem;
   color: var(--muted);
 }
